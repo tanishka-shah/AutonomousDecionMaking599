@@ -29,7 +29,7 @@ import sys
 def episode(env, agent, nr_episode=0, q_value=None):
     state = env.reset()
     discounted_return = 0
-    discount_factor = 0.99
+    discount_factor = 0.997
     done = False
     time_step = 0
     temp = {}
@@ -55,8 +55,8 @@ params = {}
 rooms_instance = sys.argv[1]
 env = rooms.load_env(f"layouts/{rooms_instance}.txt", f"{rooms_instance}.mp4")
 params["nr_actions"] = env.action_space.n
-params["gamma"] = 0.99
-params["epsilon_decay"] = 0.0001
+params["gamma"] = 0.997
+params["epsilon_decay"] = 0.00001#0.0001
 params["alpha"] = 0.1
 params["env"] = env
 
